@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/?page=dashboard">
                 <i class="mdi mdi-home menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -14,9 +14,9 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Dengue</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Pharmacy</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Whitening</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "dengue"]) }}">Dengue</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "pharmacy"]) }}">Pharmacy</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "whitening"]) }}">Whitening</a></li>
                 </ul>
             </div>
         </li>
