@@ -3,8 +3,8 @@
 ### CMS Landing Page
 
 
-### docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -p 5432:5432 -d postgres:12.19-alpine
+``` docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -p 5432:5432 -d postgres:12.19-alpine ```
 
-### psql -h localhost -p 8080 -U myuser -d mydatabase
+```sql -h localhost -p 8080 -U myuser -d mydatabase```
 
-## \d
+```\d```
