@@ -15,8 +15,8 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "dengue"]) }}">Dengue</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "pharmacy"]) }}">Pharmacy</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "whitening"]) }}">Whitening</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "pharmacy_bali"]) }}">Pharmacy</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "whitening_clinics"]) }}">Whitening</a></li>
                 </ul>
             </div>
         </li>
