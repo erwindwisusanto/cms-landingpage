@@ -3,8 +3,9 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-Route::view("/", "index")->name("index");
-Route::view("/cms", "cms")->name("cms");
-Route::view('/auth', "auth")->name("auth");
+Route::view('/', "auth")->name("auth");
+Route::post("signin", [MainController::class, 'auth'])->name("signin");
+Route::post('/logout', [MainController::class, 'logout'])->name('logout');
 
-Route::get("/campigns", [MainController::class, 'campaigns'])->name("campigns");
+Route::view("/dashboard", "index")->name("index")->middleware('auth');
+Route::view("/dashboard/cms", "cms")->name("cms")->middleware('auth');

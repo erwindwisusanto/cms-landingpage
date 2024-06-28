@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>landing page cms</title>
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -17,6 +18,8 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,6 +50,8 @@
     <script src="{{ asset('assets/js/data-table.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/js/dataTables.bootstrap4.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
