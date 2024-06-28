@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css" />
 </head>
 
 <body>
@@ -29,6 +32,7 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ asset('assets/vendors/base/vendor.bundle.base.js') }}"></script>
 
     <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
@@ -43,8 +47,6 @@
     <script src="{{ asset('assets/js/data-table.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/js/dataTables.bootstrap4.js') }}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>
