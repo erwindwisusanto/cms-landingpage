@@ -32,7 +32,7 @@ class SshTunnelServiceProvider extends ServiceProvider
             throw new \Exception('SSH login failed');
         }
 
-        $ssh->exec('autossh -M 0 -f -N -L 3306:localhost:1626');
+        $ssh->exec('autossh -M 0 -f -N -L 1836:localhost:1626');
 
         if (!$ssh->isConnected()) {
             throw new \Exception('SSH tunnel setup failed');
