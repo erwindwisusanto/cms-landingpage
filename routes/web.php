@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', "auth")->name("auth");
@@ -15,3 +16,13 @@ Route::get("/campaigns/{source}", [MainController::class, "campaigns"])->name("c
 Route::get("/campaignsLog/{source}", [MainController::class, "campaignsLog"])->name("campaignslogs")->middleware("auth");
 Route::post("/delete-campaign", [MainController::class, "deleteCampaign"])->name("delete-campaign")->middleware("auth");
 Route::post("/update-campaign", [MainController::class, "updateCampaign"])->name("update-campaign")->middleware("auth");
+
+Route::get('/test-db', function () {
+    // dd(env('GOOGLE_API_TOKEN'));
+    try {
+        $result = DB::table('admin')->get();
+        return response()->json(['status' => 'success', 'result' => $result]);
+    } catch (\Exception $e) {
+        return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+    }
+});

@@ -91,6 +91,16 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'ssh_tunnel' => [
+            'enabled' => env('SSH_TUNNEL', false),
+            'host' => env('SSH_TUNNEL_HOST'),
+            'port' => env('SSH_TUNNEL_PORT', 22),
+            'user' => env('SSH_TUNNEL_USER'),
+            'password' => env('SSH_TUNNEL_PASSWORD'),
+            'local_port' => env('SSH_TUNNEL_LOCAL_PORT', 3307),
+            'remote_port' => env('SSH_TUNNEL_REMOTE_PORT', 3306),
+        ],
+
     ],
 
     /*
@@ -123,7 +133,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [

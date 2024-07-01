@@ -3,7 +3,7 @@
         <div class="col-md-12 stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title">Campaign</p>
+                    <p class="card-title">Campaign {{ request()->query('website') }}</p>
                     <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="#modal-add-campaign">Add Campign</button>
                     <div class="table-responsive mt-4">
@@ -31,7 +31,7 @@
         <div class="col-md-12 stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title">Campaign Logs</p>
+                    <p class="card-title">Campaign Logs {{ request()->query('website') }}</p>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="campign-logs">
                             <thead>
