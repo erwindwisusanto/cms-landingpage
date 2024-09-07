@@ -27,8 +27,9 @@ class EscooterController extends Controller
     public function UpdateCounterButton(Request $request) {
         $date = Carbon::today();
         $camp = 'organic';
-        $type = $request->input('type');
-        $model = $request->input('model');
+
+        $type = $request->type;
+        $model = $request->model;
 
         try {
             DB::table('escooter_wa_logs')->updateOrInsert(
