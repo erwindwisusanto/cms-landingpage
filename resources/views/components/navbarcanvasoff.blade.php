@@ -17,6 +17,8 @@
                     <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "dengue"]) }}">Dengue</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "pharmacy_bali"]) }}">Pharmacy</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "whitening_clinics"]) }}">Whitening</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "pharmacy_jakarta"]) }}">Pharmacy Jakarta</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route("cms", ['website' => "apotek_jakarta"]) }}">Apotek Jakarta</a></li>
                 </ul>
             </div>
         </li>
