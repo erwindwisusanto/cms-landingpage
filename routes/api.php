@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApotekJakartaController;
 use App\Http\Controllers\EscooterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('escooter-updatecounter', [EscooterController::class, 'UpdateCounterLanding']);
 Route::post('escooter-updatecounterButon', [EscooterController::class, 'UpdateCounterButton']);
+
+Route::post('ap-ph-jakarta-landing', [ApotekJakartaController::class, 'UpdateCounterLanding']);
+Route::post('ap-ph-jakarta-button', [ApotekJakartaController::class, 'ButtonClick']);
