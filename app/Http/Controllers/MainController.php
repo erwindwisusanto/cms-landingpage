@@ -82,10 +82,10 @@ class MainController extends Controller
     public function campaignsLog(Request $request, $source)
     {
 
-        if ($source !== "pharmacy_jakarta" || $source !== "apotek_jakarta") {
-            $return = $this->NonPharmacyAndApotekJakarta($source);
-        } else {
+        if ($source == "pharmacy_jakarta" || $source == "apotek_jakarta") {
             $return = $this->pharmacyAndApotekJakarta($source);
+        } else {
+            $return = $this->NonPharmacyAndApotekJakarta($source);
         }
 
         return DataTables::of($return)->make(true);
