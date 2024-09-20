@@ -25,3 +25,4 @@ Route::post('escooter-updatecounterButon', [EscooterController::class, 'UpdateCo
 
 Route::post('ap-ph-jakarta-landing', [ApotekJakartaController::class, 'UpdateCounterLanding']);
 Route::post('ap-ph-jakarta-button', [ApotekJakartaController::class, 'ButtonClick']);
+Route::get('ap-ph-jakarta-wording', [ApotekJakartaController::class, 'GetWordingCampaign']);
