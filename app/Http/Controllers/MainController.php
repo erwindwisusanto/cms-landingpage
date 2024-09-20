@@ -81,6 +81,18 @@ class MainController extends Controller
 
     public function campaignsLog(Request $request, $source)
     {
+
+        if ($source !== "pharmacy_jakarta" || $source !== "apotek_jakarta") {
+            $return = $this->NonPharmacyAndApotekJakarta($source);
+        } else {
+            $return = $this->pharmacyAndApotekJakarta($source);
+        }
+
+        return DataTables::of($return)->make(true);
+    }
+
+    private function NonPharmacyAndApotekJakarta($source)
+    {
         $return = [];
         $datas = DB::table('campaign_logs')
             ->select('*')
@@ -102,7 +114,33 @@ class MainController extends Controller
             ];
         }
 
-        return DataTables::of($return)->make(true);
+        return $return;
+    }
+
+    private function pharmacyAndApotekJakarta($source)
+    {
+        $return = [];
+        $datas = DB::table('ap_ph_jakarta_landing_logs')
+            ->select('*')
+            ->where('source', $source)
+            ->orderBy('date', 'desc')
+            ->get();
+
+        for ($i = 0; $i < count($datas); $i++) {
+            $data = $datas[$i];
+            $return[] = [
+                'row_number' => $i + 1,
+                'id' => $data->id,
+                'campaign_name' => $data->campaign,
+                'visit_landingpage' => $data->total,
+                'whatsapp_hit' => !empty($data->wa_clicks) ? $data->wa_clicks : 0,
+                'telegram_hit' => !empty($data->telegram_clicks) ? $data->telegram_clicks : 0,
+                'source_url' => $data->source_url,
+                'date' => $data->date,
+            ];
+        }
+
+        return $return;
     }
 
     public function deleteCampaign(Request $request) {
