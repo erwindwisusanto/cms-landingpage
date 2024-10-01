@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApotekJakartaController;
 use App\Http\Controllers\EscooterController;
+use App\Http\Controllers\HomeLabController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,9 @@ Route::post('escooter-updatecounterButon', [EscooterController::class, 'UpdateCo
 Route::post('ap-ph-jakarta-landing', [ApotekJakartaController::class, 'UpdateCounterLanding']);
 Route::post('ap-ph-jakarta-button', [ApotekJakartaController::class, 'ButtonClick']);
 Route::get('ap-ph-jakarta-wording', [ApotekJakartaController::class, 'GetWordingCampaign']);
+
+// Route::get('/products', [ApotekJakartaController::class, 'Products']);
+
+Route::post('homelab', [HomeLabController::class, 'UpdateCounterLanding']);
+Route::get('homelab-wording', [HomeLabController::class, 'GetWordingCampaign']);
+Route::post('homelab-logs-button', [HomeLabController::class, 'ButtonClick']);
