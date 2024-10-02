@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ShopService;
 use App\Models\Campaign;
 use App\Models\ModelApPhJakarta;
 use Carbon\Carbon;
@@ -9,6 +10,12 @@ use Illuminate\Http\Request;
 
 class ApotekJakartaController extends Controller
 {
+    protected $shopService;
+    public function __construct(ShopService $shopService)
+    {
+        $this->shopService = $shopService;
+    }
+
     public function UpdateCounterLanding(Request $request)
     {
         $count = 1;
@@ -95,5 +102,19 @@ class ApotekJakartaController extends Controller
         }
 
         return response()->json(['wording' => null, 'message' => 'success'], 200);
+    }
+
+    public function Products(Request $request) {
+        $searchProducts = $request->search_products;
+        $sortPrice = $request->sort_price;
+        $filterCategory = $request->category;
+
+        $products = $this->shopService->GetProducts($searchProducts, $sortPrice, $filterCategory);
+
+        if (empty($products)) {
+          return response()->json(['data' => null, 'success' => false]);
+        }
+
+        return response()->json(['message' => true, 'data' => $products]);
     }
 }
