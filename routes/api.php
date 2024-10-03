@@ -28,7 +28,7 @@ Route::post('ap-ph-jakarta-landing', [ApotekJakartaController::class, 'UpdateCou
 Route::post('ap-ph-jakarta-button', [ApotekJakartaController::class, 'ButtonClick']);
 Route::get('ap-ph-jakarta-wording', [ApotekJakartaController::class, 'GetWordingCampaign']);
 
-// Route::get('/products', [ApotekJakartaController::class, 'Products']);
+Route::get('/products', [ApotekJakartaController::class, 'Products']);
 
 Route::post('homelab', [HomeLabController::class, 'UpdateCounterLanding']);
 Route::get('homelab-wording', [HomeLabController::class, 'GetWordingCampaign']);
