@@ -76,7 +76,7 @@
                             $website = request()->query('website');
                         @endphp
 
-                        @if ($website === 'pharmacy_bali')
+                        @if ($website === 'pharmacy_bali_v2')
                             <div class="form-group">
                                 <label for="locale">Locale <span style="color: red"> *Locale work only for campaign "organic"</span></label>
                                 <select class="form-control" id="locale" name="locale">
