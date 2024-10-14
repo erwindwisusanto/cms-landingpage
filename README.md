@@ -16,3 +16,6 @@
 ``` mysql -u root -p ```
 
 ``` ALTER USER 'laraveluser'@'%' IDENTIFIED WITH mysql_native_password BY 'secret'; ```
+
+
+``` gist https://gist.github.com/erwindwisusanto/3b5b57fe7249eb67d0256b8930812c8c ```
