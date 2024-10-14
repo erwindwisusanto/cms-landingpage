@@ -38,13 +38,15 @@ class MainController extends Controller
 
     public function addCampaign(Request $request)
     {
+        $locale = $request->input('locale');
+        $source = $request->input('source');
         $campaignName = $request->input('name');
         $whatsAppWording = $request->input('wa_word');
-        $source = $request->input('source');
 
         DB::table('campaign')->insert([
             'source' => $source,
             'name' => $campaignName,
+            'locale' => $locale,
             'whatsapp_wording' => $whatsAppWording,
             'created_by' => auth()->user()->username,
             'created_at' => Carbon::now(),
@@ -68,6 +70,7 @@ class MainController extends Controller
             $return[] = [
                 'row_number' => $i + 1,
                 'id' => $data->id,
+                'locale' => $data->locale,
                 'name' => $data->name,
                 'wa_word' => $data->whatsapp_wording,
                 'created_by' => $data->created_by,
@@ -86,6 +89,8 @@ class MainController extends Controller
             $return = $this->pharmacyAndApotekJakarta($source);
         } else if ($source === "balihomelab") {
             $return = $this->baliHomeLab($source);
+        } else if ($source === "pharmacy_bali") {
+            $return = $this->pharmacybaliLog($source);
         } else {
             $return = $this->NonPharmacyAndApotekJakarta($source);
         }
@@ -149,6 +154,32 @@ class MainController extends Controller
     {
         $return = [];
         $datas = DB::table('homelab_logs')
+            ->select('*')
+            ->where('source', $source)
+            ->orderBy('date', 'desc')
+            ->get();
+
+        for ($i = 0; $i < count($datas); $i++) {
+            $data = $datas[$i];
+            $return[] = [
+                'row_number' => $i + 1,
+                'id' => $data->id,
+                'campaign_name' => $data->campaign,
+                'visit_landingpage' => $data->total,
+                'whatsapp_hit' => !empty($data->wa_clicks) ? $data->wa_clicks : 0,
+                'telegram_hit' => !empty($data->telegram_clicks) ? $data->telegram_clicks : 0,
+                'source_url' => $data->source_url,
+                'date' => $data->date,
+            ];
+        }
+
+        return $return;
+    }
+
+    private function pharmacybaliLog($source)
+    {
+        $return = [];
+        $datas = DB::table('pharmacybali_log')
             ->select('*')
             ->where('source', $source)
             ->orderBy('date', 'desc')

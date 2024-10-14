@@ -19,7 +19,7 @@
                 <div class="row w-100 mx-0">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                            <h4>Login CMS</h4>
+                            <h4>CMS Landing page</h4>
                             <form class="pt-3" id="loginForm" method="POST">
                                 @csrf
                                 <div class="form-group">
