@@ -91,9 +91,14 @@ class ApotekJakartaController extends Controller
     }
 
     public function GetWordingCampaign(Request $request) {
-        $source = $request->input("source");
-        $campaign = $request->input("campaign");
+        $source = $request->source;
+        $campaign = !empty($request->campaign) ? $request->campaign : 'organic';
+        $locale = $request->locale;
+
         $camp = Campaign::where('name', $campaign)
+                ->when($campaign === 'organic', function ($query) use ($locale) {
+                    return $query->where('locale', $locale);
+                })
                 ->where('source', $source)
                 ->select('whatsapp_wording')->first();
 
@@ -101,7 +106,7 @@ class ApotekJakartaController extends Controller
             return response()->json(['wording' => $camp, 'message' => 'success'], 200);
         }
 
-        return response()->json(['wording' => null, 'message' => 'success'], 200);
+        return response()->json(['wording' => null, 'message' => 'success'], 404);
     }
 
     public function Products(Request $request) {
