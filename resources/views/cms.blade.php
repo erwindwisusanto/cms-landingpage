@@ -12,6 +12,7 @@
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th class="text-center">Campign Name</th>
+                                    <th class="text-center">Locale</th>
                                     <th class="text-center">WhatsApp Wording</th>
                                     <th class="text-center">Creted By</th>
                                     <th class="text-center">Date</th>
@@ -71,6 +72,20 @@
                             <label for="exampleTextarea1">Campign Name</label>
                             <input type="text" class="form-control form-control-lg" name="name" id="name">
                         </div>
+                        @php
+                            $website = request()->query('website');
+                        @endphp
+
+                        @if ($website === 'pharmacy_bali')
+                            <div class="form-group">
+                                <label for="locale">Locale</label>
+                                <select class="form-control" id="locale" name="locale">
+                                    <option value="id">ID (Indonesia)</option>
+                                    <option value="en">EN (English)</option>
+                                </select>
+                            </div>
+                        @endif
+
                         <div class="form-group">
                             <label for="exampleTextarea1">WhatsApp Wording</label>
                             <textarea class="form-control" name="wa_word" id="wa_word" rows="4" style="height: 100px"></textarea>
@@ -107,7 +122,7 @@
                             <input type="text" class="form-control form-control-lg" name="update-name" id="update-name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleTextarea1">WhatsApp Wording</label>
+                            <label for="exampleTextarea1">Wording</label>
                             <textarea class="form-control" name="update-wa_word" id="update-wa_word" rows="4" style="height: 100px"></textarea>
                         </div>
                         <input type="hidden" class="form-control" id="campaign-id" name="campaign-id"
@@ -176,6 +191,10 @@
                 {
                     data: 'name',
                     name: 'name'
+                },
+                {
+                    data: 'locale',
+                    name: 'locale'
                 },
                 {
                     data: 'wa_word',
