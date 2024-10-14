@@ -89,7 +89,7 @@ class MainController extends Controller
             $return = $this->pharmacyAndApotekJakarta($source);
         } else if ($source === "balihomelab") {
             $return = $this->baliHomeLab($source);
-        } else if ($source === "pharmacy_bali") {
+        } else if ($source === "pharmacy_bali_v2") {
             $return = $this->pharmacybaliLog($source);
         } else {
             $return = $this->NonPharmacyAndApotekJakarta($source);
