@@ -102,9 +102,12 @@ class PharmacyBaliController extends Controller
         $locale = $request->locale;
 
         $camp = Campaign::where('name', $campaign)
-                ->where('source', $source)
-                ->where('locale', $locale)
-                ->select('whatsapp_wording')->first();
+            ->where('source', $source)
+            ->when($campaign === 'organic', function ($query) use ($locale) {
+                return $query->where('locale', $locale);
+            })
+            ->select('whatsapp_wording')
+            ->first();
 
         if ($camp || $camp === "organic") {
             return response()->json(
