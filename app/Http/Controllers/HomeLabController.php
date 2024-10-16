@@ -51,16 +51,21 @@ class HomeLabController extends Controller
     public function GetWordingCampaign(Request $request)
     {
         $source = $request->source;
-        $campaign = $request->campaign;
+        $campaign = !empty($request->campaign) ? $request->campaign : 'organic';
+        $locale = $request->locale;
+
         $camp = Campaign::where('name', $campaign)
                 ->where('source', $source)
+                ->when($campaign === 'organic', function ($query) use ($locale) {
+                    return $query->where('locale', $locale);
+                })
                 ->select('whatsapp_wording')->first();
 
         if ($camp || $camp === "organic") {
             return response()->json(['wording' => $camp, 'message' => 'success'], 200);
         }
 
-        return response()->json(['wording' => null, 'message' => 'failed'], 200);
+        return response()->json(['wording' => null, 'message' => 'failed'], 404);
     }
 
     public function ButtonClick(Request $request)
