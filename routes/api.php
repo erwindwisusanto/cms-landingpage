@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApotekJakartaController;
+use App\Http\Controllers\DengueController;
 use App\Http\Controllers\EscooterController;
 use App\Http\Controllers\HomeLabController;
 use App\Http\Controllers\PharmacyBaliController;
@@ -39,3 +40,7 @@ Route::post('homelab-logs-button', [HomeLabController::class, 'ButtonClick']);
 Route::post('/pharmacybali/log-landing', [PharmacyBaliController::class, 'UpdateCounterLanding']);
 Route::post('/pharmacybali/log-button', [PharmacyBaliController::class, 'ButtonClick']);
 Route::get('/pharmacybali/campaign-wording-prewritten', [PharmacyBaliController::class, 'GetWordingCampaign']);
+
+Route::post('/dengue/log-landing', [DengueController::class, 'UpdateCounterLanding']);
+Route::post('/dengue/log-button', [DengueController::class, 'ButtonClick']);
+Route::get('/dengue/campaign-wording-prewritten', [DengueController::class, 'GetWordingCampaign']);
