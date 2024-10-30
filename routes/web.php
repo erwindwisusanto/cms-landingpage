@@ -26,3 +26,7 @@ Route::get('/test-db', function () {
         return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
     }
 });
+
+Route::view("/new", "new")->name("new");
+
+
