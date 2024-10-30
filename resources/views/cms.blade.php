@@ -81,7 +81,8 @@
                                 $website === 'pharmacy_jakarta' ||
                                 $website === 'apotek_jakarta' ||
                                 $website === 'balihomelab' ||
-                                $website === 'whitening_clinic_v2'
+                                $website === 'whitening_clinic_v2' ||
+                                $website === 'dengue_v2'
                             )
                             <div class="form-group">
                                 <label for="locale">Locale <span style="color: red"> *Locale work only for campaign
