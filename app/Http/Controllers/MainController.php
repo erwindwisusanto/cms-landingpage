@@ -93,6 +93,8 @@ class MainController extends Controller
             $return = $this->pharmacybaliLog($source);
         } else if ($source === "whitening_clinic_v2") {
             $return = $this->logWhiteningClinic($source);
+        } else if ($source === "dengue_v2") {
+            $return = $this->logDengue($source);
         } else {
             $return = $this->NonPharmacyAndApotekJakarta($source);
         }
@@ -208,6 +210,32 @@ class MainController extends Controller
     {
         $return = [];
         $datas = DB::table('whitening_clinic_log')
+            ->select('*')
+            ->where('source', $source)
+            ->orderBy('date', 'desc')
+            ->get();
+
+        for ($i = 0; $i < count($datas); $i++) {
+            $data = $datas[$i];
+            $return[] = [
+                'row_number' => $i + 1,
+                'id' => $data->id,
+                'campaign_name' => $data->campaign,
+                'visit_landingpage' => $data->total,
+                'whatsapp_hit' => !empty($data->wa_clicks) ? $data->wa_clicks : 0,
+                'telegram_hit' => !empty($data->telegram_clicks) ? $data->telegram_clicks : 0,
+                'source_url' => $data->source_url,
+                'date' => $data->date,
+            ];
+        }
+
+        return $return;
+    }
+
+    private function logDengue($source)
+    {
+        $return = [];
+        $datas = DB::table('dengue_log')
             ->select('*')
             ->where('source', $source)
             ->orderBy('date', 'desc')
