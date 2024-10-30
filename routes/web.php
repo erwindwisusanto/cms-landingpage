@@ -17,16 +17,5 @@ Route::get("/campaignsLog/{source}", [MainController::class, "campaignsLog"])->n
 Route::post("/delete-campaign", [MainController::class, "deleteCampaign"])->name("delete-campaign")->middleware("auth");
 Route::post("/update-campaign", [MainController::class, "updateCampaign"])->name("update-campaign")->middleware("auth");
 
-Route::get('/test-db', function () {
-    // dd(env('GOOGLE_API_TOKEN'));
-    try {
-        $result = DB::table('admin')->get();
-        return response()->json(['status' => 'success', 'result' => $result]);
-    } catch (\Exception $e) {
-        return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
-    }
-});
-
-Route::view("/new", "new")->name("new");
 
 

@@ -4,10 +4,10 @@
             <div class="card">
                 <div class="card-body">
                     <p class="card-title">Campaign {{ request()->query('website') }}</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#modal-add-campaign">Add Campign</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-campaign">Add
+                        Campign</button>
                     <div class="table-responsive mt-4">
-                        <table class="table table-bordered" id="campign">
+                        <table class="table table-bordered" id="campign" style="width:100%">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <p class="card-title">Campaign Logs {{ request()->query('website') }}</p>
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="campign-logs">
+                        <table class="table table-bordered" id="campign-logs" style="width:100%">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
@@ -76,9 +76,16 @@
                             $website = request()->query('website');
                         @endphp
 
-                        @if ($website === 'pharmacy_bali_v2' || $website === 'pharmacy_jakarta' || $website === 'apotek_jakarta' || $website === 'balihomelab')
+                        @if (
+                            $website === 'pharmacy_bali_v2' ||
+                                $website === 'pharmacy_jakarta' ||
+                                $website === 'apotek_jakarta' ||
+                                $website === 'balihomelab' ||
+                                $website === 'whitening_clinic_v2'
+                            )
                             <div class="form-group">
-                                <label for="locale">Locale <span style="color: red"> *Locale work only for campaign "organic"</span></label>
+                                <label for="locale">Locale <span style="color: red"> *Locale work only for campaign
+                                        "organic"</span></label>
                                 <select class="form-control" id="locale" name="locale">
                                     <option value=""></option>
                                     <option value="id">ID (Indonesia)</option>
@@ -105,8 +112,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal-update-campaign" tabindex="-1" role="dialog" aria-labelledby="modal-update-campaign"
-        aria-hidden="true">
+    <div class="modal fade" id="modal-update-campaign" tabindex="-1" role="dialog"
+        aria-labelledby="modal-update-campaign" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -120,7 +127,8 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleTextarea1">Campign Name</label>
-                            <input type="text" class="form-control form-control-lg" name="update-name" id="update-name">
+                            <input type="text" class="form-control form-control-lg" name="update-name"
+                                id="update-name">
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea1">Wording</label>
@@ -214,17 +222,16 @@
                     name: 'created_at'
                 },
             ],
-            columnDefs: [
-                {
-                    targets: 5,
-                    className: `text-center align-middle`,
-                    render: function(data, type, full, row) {
-                        console.log(full['id']);
-                        const button = `<button class="btn btn-inverse-primary" onclick="modalUpdateCampaign('${full['name']}', '${full['wa_word']}', '${full['id']}')">Edit</button>&nbsp;<button class="btn btn-inverse-danger" onclick="deleteLaporan('${full['id']}')">Delete</button>`;
-                        return button;
-                    }
-                },
-            ],
+            columnDefs: [{
+                targets: 5,
+                className: `text-center align-middle`,
+                render: function(data, type, full, row) {
+                    console.log(full['id']);
+                    const button =
+                        `<button class="btn btn-inverse-primary" onclick="modalUpdateCampaign('${full['name']}', '${full['wa_word']}', '${full['id']}')">Edit</button>&nbsp;<button class="btn btn-inverse-danger" onclick="deleteLaporan('${full['id']}')">Delete</button>`;
+                    return button;
+                }
+            }, ],
         });
     }
 
