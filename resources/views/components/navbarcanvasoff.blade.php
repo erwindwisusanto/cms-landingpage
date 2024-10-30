@@ -9,34 +9,27 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-circle-outline menu-icon"></i>
-                <span class="menu-title">Landing Page</span>
+                <span class="menu-title">Website</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'dengue' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'dengue']) }}">Dengue</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'pharmacy_bali' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'pharmacy_bali']) }}">Pharmacy Bali</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'whitening_clinics' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'whitening_clinics']) }}">Whitening</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'pharmacy_jakarta' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'pharmacy_jakarta']) }}">Pharmacy Jakarta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'apotek_jakarta' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'apotek_jakarta']) }}">Apotek Jakarta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'balihomelab' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'balihomelab']) }}">Bali Home Lab</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'pharmacy_bali_v2' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'pharmacy_bali_v2']) }}">Pharmacy Bali v2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->get('website') == 'whitening_clinic_v2' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'whitening_clinic_v2']) }}">Whitening Clinic v2</a>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'dengue']) }}">denguehospital.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'pharmacy_bali']) }}">pharmacybali.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'whitening_clinics']) }}">whiteningclinics.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'pharmacy_jakarta']) }}">pharmacyjakarta.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'apotek_jakarta']) }}">apotikjakarta.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'balihomelab']) }}">balihomelab.com</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'pharmacy_bali_v2']) }}">pharmacybali.com v2</a></li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'whitening_clinic_v2']) }}">whiteningclinics.com v2</a>
                     </li>
                 </ul>
             </div>
