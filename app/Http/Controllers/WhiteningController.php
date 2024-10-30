@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WhiteningController extends Controller
 {
     protected $campaignService;
-    private $tableName = "whitening_clinic";
+    private $tableName = "whitening_clinic_log";
 
     public function __construct(CampaignService $campaignService)
     {
@@ -35,9 +35,9 @@ class WhiteningController extends Controller
                 $message = "new record successfully";
             }
 
-            return response()->json(["message" => "[VALID CAMPAIGN] $message"], 201);
+            return response()->json(["message" => "Valid campaign $message"], 201);
         } else {
-            return response()->json(["message" => "[INVALID CAMPAIGN] counter update failed"], 400);
+            return response()->json(["message" => "Invalid campaign counter update failed"], 400);
         }
     }
 

@@ -35,6 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->get('website') == 'pharmacy_bali_v2' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'pharmacy_bali_v2']) }}">Pharmacy Bali v2</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->get('website') == 'whitening_clinic_v2' ? 'active' : '' }}" href="{{ route('cms', ['website' => 'whitening_clinic_v2']) }}">Whitening Clinic v2</a>
+                    </li>
                 </ul>
             </div>
         </li>

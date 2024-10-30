@@ -21329,8 +21329,8 @@ dl li {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
-  color: #0d57ff;
-  font-weight: bold;
+  color: #000;
+  /* font-weight: bold; */
   background: transparent;
 }
 

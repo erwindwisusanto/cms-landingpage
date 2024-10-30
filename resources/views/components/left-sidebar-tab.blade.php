@@ -34,25 +34,10 @@
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Analytics</a>
+                        <a class="nav-link" href="index.html">whiteningclinics.com</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="crypto-index.html">Crypto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="crm-index.html">CRM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects-index.html">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ecommerce-index.html">Ecommerce</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="helpdesk-index.html">Helpdesk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="hospital-index.html">Hospital</a>
+                        <a class="nav-link" href="crypto-index.html">whitening.clinic</a>
                     </li>
                 </ul>
             </div>
