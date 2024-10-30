@@ -31,6 +31,9 @@
                     <li class="nav-item"> <a class="nav-link"
                             href="{{ route('cms', ['website' => 'whitening_clinic_v2']) }}">whiteningclinics.com v2</a>
                     </li>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('cms', ['website' => 'dengue_v2']) }}">denguehospital.com v2</a>
+                    </li>
                 </ul>
             </div>
         </li>
