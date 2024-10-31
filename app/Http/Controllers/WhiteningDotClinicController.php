@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Services\CampaignService;
 use Illuminate\Http\Request;
 
-class WhiteningController extends Controller
+class WhiteningDotClinicController extends Controller
 {
     protected $campaignService;
-    private $tableName = "whitening_clinic_log";
+    private $tableName = "whitening_dot_clinic_log";
 
     public function __construct(CampaignService $campaignService)
     {
