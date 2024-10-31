@@ -6,6 +6,7 @@ use App\Http\Controllers\EscooterController;
 use App\Http\Controllers\HomeLabController;
 use App\Http\Controllers\PharmacyBaliController;
 use App\Http\Controllers\WhiteningController;
+use App\Http\Controllers\WhiteningDotClinicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,12 @@ Route::post('/dengue/log-button', [DengueController::class, 'ButtonClick']);
 Route::get('/dengue/campaign-wording-prewritten', [DengueController::class, 'GetWordingCampaign']);
 
 Route::prefix('whitening')->controller(WhiteningController::class)->group(function () {
+    Route::post('/log-landing', 'UpdateCounterLanding');
+    Route::post('/log-button', 'ButtonClick');
+    Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');
+});
+
+Route::prefix('whitening-dot-clinic')->controller(WhiteningDotClinicController::class)->group(function () {
     Route::post('/log-landing', 'UpdateCounterLanding');
     Route::post('/log-button', 'ButtonClick');
     Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');
