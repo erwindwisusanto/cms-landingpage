@@ -4,6 +4,7 @@ use App\Http\Controllers\ApotekJakartaController;
 use App\Http\Controllers\DengueController;
 use App\Http\Controllers\EscooterController;
 use App\Http\Controllers\HomeLabController;
+use App\Http\Controllers\JakartaHomeLabController;
 use App\Http\Controllers\PharmacyBaliController;
 use App\Http\Controllers\WhiteningController;
 use App\Http\Controllers\WhiteningDotClinicController;
@@ -54,6 +55,12 @@ Route::prefix('whitening')->controller(WhiteningController::class)->group(functi
 });
 
 Route::prefix('whitening-dot-clinic')->controller(WhiteningDotClinicController::class)->group(function () {
+    Route::post('/log-landing', 'UpdateCounterLanding');
+    Route::post('/log-button', 'ButtonClick');
+    Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');
+});
+
+Route::prefix('jakarta-homelab')->controller(JakartaHomeLabController::class)->group(function () {
     Route::post('/log-landing', 'UpdateCounterLanding');
     Route::post('/log-button', 'ButtonClick');
     Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');

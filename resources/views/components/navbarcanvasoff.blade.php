@@ -37,7 +37,9 @@
                     <li class="nav-item"> <a class="nav-link"
                             href="{{ route('cms', ['website' => 'dengue_v2']) }}">denguehospital.com v2</a>
                     </li>
-
+                    <li class="nav-item"> <a class="nav-link"
+                        href="{{ route('cms', ['website' => 'jakartahomelab']) }}">jakartahomelab.com v2</a>
+                    </li>
                 </ul>
             </div>
         </li>
