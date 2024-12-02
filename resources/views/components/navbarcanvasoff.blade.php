@@ -40,6 +40,9 @@
                     <li class="nav-item"> <a class="nav-link"
                         href="{{ route('cms', ['website' => 'jakartahomelab']) }}">jakartahomelab.com v2</a>
                     </li>
+                    <li class="nav-item"> <a class="nav-link"
+                        href="{{ route('cms', ['website' => 'fisiohomecare']) }}">fisiojakarta.com</a>
+                    </li>
                 </ul>
             </div>
         </li>

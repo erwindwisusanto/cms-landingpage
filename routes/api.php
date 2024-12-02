@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApotekJakartaController;
 use App\Http\Controllers\DengueController;
 use App\Http\Controllers\EscooterController;
+use App\Http\Controllers\FisioHomecare;
 use App\Http\Controllers\HomeLabController;
 use App\Http\Controllers\JakartaHomeLabController;
 use App\Http\Controllers\PharmacyBaliController;
@@ -61,6 +62,12 @@ Route::prefix('whitening-dot-clinic')->controller(WhiteningDotClinicController::
 });
 
 Route::prefix('jakarta-homelab')->controller(JakartaHomeLabController::class)->group(function () {
+    Route::post('/log-landing', 'UpdateCounterLanding');
+    Route::post('/log-button', 'ButtonClick');
+    Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');
+});
+
+Route::prefix('fisio-homecare')->controller(FisioHomecare::class)->group(function () {
     Route::post('/log-landing', 'UpdateCounterLanding');
     Route::post('/log-button', 'ButtonClick');
     Route::get('/campaign-wording-prewritten', 'GetWordingCampaign');
